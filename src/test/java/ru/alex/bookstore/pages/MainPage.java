@@ -34,4 +34,12 @@ public class MainPage extends BasePage {
         return new LoginPage(driver);
     }
 
+    @Step("Поиск книги по значение: {0}")
+    public SearchResultsPage searchFor(String text) {
+        open(generalConfig.baseUrl());
+        type(searchInput, text);
+        click(submitSearchButton);
+        return new SearchResultsPage(driver);
+    }
+
 }
