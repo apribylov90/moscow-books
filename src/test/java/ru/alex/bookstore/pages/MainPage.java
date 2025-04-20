@@ -7,9 +7,9 @@ import org.openqa.selenium.support.PageFactory;
 import ru.alex.bookstore.pages.modal.LoginModal;
 
 public class MainPage extends BasePage {
-    private By loginButton = By.xpath("//a[contains(@class, 'auth_link_login')]");
-    private By searchInput = By.xpath("//form[@class='header__main__search__form']//input[@type='text']");
-    private By submitSearchButton = By.xpath("//form[@class='header__main__search__form']//input[@type='submit']");
+    private final By loginButton = By.xpath("//a[contains(@class, 'auth_link_login')]");
+    private final By searchInput = By.xpath("//form[@class='header__main__search__form']//input[@type='text']");
+    private final By submitSearchButton = By.xpath("//form[@class='header__main__search__form']//input[@type='submit']");
 
     public MainPage(WebDriver driver) {
         super(driver);

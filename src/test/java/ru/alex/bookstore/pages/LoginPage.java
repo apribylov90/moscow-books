@@ -7,11 +7,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class LoginPage extends BasePage {
-    private By emailInput = By.xpath("//input[@id='Email']");
-    private By passwordInput = By.xpath("//input[@id='Password']");
-    private By loginButton = By.xpath("//button[@type='submit']");
-    private By rememberMeCheckbox = By.xpath("//input[@id='RememberMe']");
-    private By rememberMeCheckboxLabel = By.xpath("//label[@for='RememberMe']");
+    private final By emailInput = By.xpath("//input[@id='Email']");
+    private final By passwordInput = By.xpath("//input[@id='Password']");
+    private final By loginButton = By.xpath("//button[@type='submit']");
+    private final By rememberMeCheckbox = By.xpath("//input[@id='RememberMe']");
+    private final By rememberMeCheckboxLabel = By.xpath("//label[@for='RememberMe']");
 
     public LoginPage(WebDriver driver) {
         super(driver);
