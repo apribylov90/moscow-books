@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @Epic("Личный Кабинет")
 @Feature("Авторизация")
 @DisplayName("Тесты авторизации")
-public class LoginTest extends BaseTest {
+public class LoginTests extends BaseTest {
 
     @Story("Проверка формы входа")
     @Description("Проверяем, что пользователь может войти в систему с валидными учетными данными")

@@ -3,7 +3,6 @@ package ru.alex.bookstore.tests;
 import io.qameta.allure.Description;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import ru.alex.bookstore.pages.SearchResultsPage;
@@ -11,7 +10,7 @@ import ru.alex.bookstore.pages.SearchResultsPage;
 import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-public class SearchTest extends BaseTest {
+public class SearchTests extends BaseTest {
 
     @Story("Проверка функционала поиск")
     @Description("Проверяем, что пользователь может успешно найти товар с заданными параметрами")
