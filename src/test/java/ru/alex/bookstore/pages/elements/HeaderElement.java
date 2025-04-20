@@ -3,6 +3,7 @@ package ru.alex.bookstore.pages.elements;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import ru.alex.bookstore.pages.BasePage;
+import ru.alex.bookstore.pages.WishlistPage;
 
 public class HeaderElement extends BasePage {
     private final By wishlistButton = By.className("header__main__favorites__block");
@@ -19,4 +20,8 @@ public class HeaderElement extends BasePage {
         return find(wishlistCount).getText();
     }
 
+    public WishlistPage clickWishlistButton() {
+        driver.findElement(wishlistButton).click();
+        return new WishlistPage(driver);
+    }
 }
