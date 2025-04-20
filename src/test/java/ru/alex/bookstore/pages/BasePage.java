@@ -60,13 +60,12 @@ public class BasePage {
     }
 
     protected boolean isElementPresent(By locator) {
-        return !driver.findElements(locator).isEmpty();
-
-//        try {
-//            wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-//            return true;
-//        } catch (TimeoutException e) {
-//            return false;
-//        }
+//        return !driver.findElements(locator).isEmpty();
+        try {
+            wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+            return true;
+        } catch (TimeoutException e) {
+            return false;
+        }
     }
 }
