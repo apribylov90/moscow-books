@@ -13,6 +13,9 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class SearchTest extends BaseTest {
 
+    @Story("Проверка функционала поиск")
+    @Description("Проверяем, что пользователь может успешно найти товар с заданными параметрами")
+    @DisplayName("Успешный поиск книг по автору")
     @ParameterizedTest
     @ValueSource(strings = {"Пушкин", "Лермонтов"})
     public void successfulSearchTest(String searchValue) {
@@ -41,6 +44,9 @@ public class SearchTest extends BaseTest {
 
     }
 
+    @Story("Проверка функционала поиск")
+    @Description("Проверяем, что пользователь не может найти товар с заданными параметрами")
+    @DisplayName("Поиск с некорректными данными")
     @ParameterizedTest
     @ValueSource(strings = {"test123"})
     public void unSuccessfulSearchTest(String searchValue) {
