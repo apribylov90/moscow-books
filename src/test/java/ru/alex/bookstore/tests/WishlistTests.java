@@ -1,13 +1,22 @@
 package ru.alex.bookstore.tests;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import org.junit.jupiter.api.Test;
 import ru.alex.bookstore.pages.SearchResultsPage;
 
 import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
+@Epic("Книжный магазин Moscow Books")
+@Feature("Действия пользователя в каталоге книг")
+@Story("Добавление в избранное")
 public class WishlistTests extends BaseTest{
 
+    @Story("Проверка функционала добвление в избранное")
+    @Description("Проверяем, что пользователь может успешно найти товар и добавить его в избранное")
     @Test
     public void addToWishlistTest() {
         SearchResultsPage searchResultsPage = mainPage.searchFor("Пушкин");
@@ -24,15 +33,25 @@ public class WishlistTests extends BaseTest{
                     .isTrue();
         });
 
-        searchResultsPage.addToWishlist();
+        step("Добавить книгу в избранное", () -> {
+            searchResultsPage.addToWishlist();
+        });
 
-        assertThat(popup.popupAppeared())
-                .as("Должно появиться сообщение о добавлении в избранное")
-                .isTrue();
+        step("Проверка всплывающего сообщения - Товар помещен в избранное", () -> {
+            assertThat(popup.popupAppeared())
+                    .as("Должно появиться сообщение о добавлении в избранное")
+                    .isTrue();
 
-        assertThat(popup.getPopupMessage()).isEqualTo(expectedMessage);
+            assertThat(popup.getPopupMessage()).isEqualTo(expectedMessage);
+        });
 
-        assertThat(header.getWishlistCount()).isEqualTo("1");
+        step("Проверка счетчика избранного", () -> {
+            assertThat(header.getWishlistCount()).isEqualTo("1");
+        });
+
+
+
+
 
 
     }

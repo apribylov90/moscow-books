@@ -1,6 +1,8 @@
 package ru.alex.bookstore.tests;
 
 import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -10,6 +12,10 @@ import ru.alex.bookstore.pages.SearchResultsPage;
 import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
+
+@Epic("Книжный магазин Moscow Books")
+@Feature("Действия пользователя в каталоге книг")
+@Story("Поиск, фильтрация и сортировка книг в каталоге")
 public class SearchTests extends BaseTest {
 
     @Story("Проверка функционала поиск")
