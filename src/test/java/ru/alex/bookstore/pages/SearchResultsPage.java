@@ -11,7 +11,8 @@ public class SearchResultsPage extends BasePage {
     private final By searchResults = By.id("searchresults");
     private final By searchTitle = By.className("page-header__title");
     private final By loader = By.xpath("//p[@id='pLoader']");
-    private final By authorName = By.className("author-name");
+    private final By wishlistButton = By.xpath("(//div[@title='В избранное'])[1]");
+
 
     public SearchResultsPage(WebDriver driver) {
         super(driver);
@@ -36,4 +37,10 @@ public class SearchResultsPage extends BasePage {
     public String searchTitleIsPresent() {
         return find(searchTitle).getText();
     }
+
+    public void addToWishlist() {
+        click(wishlistButton);
+    }
+
+
 }
