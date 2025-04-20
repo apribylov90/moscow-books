@@ -28,4 +28,10 @@ public class MainPage extends BasePage {
         return isElementWithTextPresent("a", email);
     }
 
+    @Step("Открыть страницу формы входа")
+    public LoginPage openLoginPage() {
+        open(generalConfig.baseUrl() + "/user/login/");
+        return new LoginPage(driver);
+    }
+
 }
