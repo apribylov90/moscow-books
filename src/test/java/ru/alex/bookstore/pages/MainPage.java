@@ -22,4 +22,10 @@ public class MainPage extends BasePage {
         click(loginButton);
         return new LoginModal(driver);
     }
+
+    @Step("Проверка вошел ли пользователь")
+    public boolean isLoggedIn(String email) {
+        return isElementWithTextPresent("a", email);
+    }
+
 }
