@@ -1,16 +1,14 @@
 package ru.alex.bookstore.pages;
 
 import io.qameta.allure.Step;
-import org.openqa.selenium.By;
-import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class SearchResultsPage extends BasePage {
     private final By searchResults = By.id("searchresults");
     private final By searchTitle = By.className("page-header__title");
-    private final By loader = By.xpath("//p[@id='pLoader']");
+    private final By loader = By.id("pLoader");
     private final By wishlistButton = By.xpath("(//div[@title='В избранное'])[1]");
 
 
@@ -20,10 +18,14 @@ public class SearchResultsPage extends BasePage {
 
     @Step("Проверка исчез ли loader")
     public boolean isLoaderDisappeared() {
+        if (driver.findElements(loader).isEmpty()) {
+            return true;
+        }
         try {
-            return wait.until(ExpectedConditions.invisibilityOfElementLocated(loader));
+            wait.until(ExpectedConditions.invisibilityOfElementLocated(loader));
+            return true;
         } catch (TimeoutException e) {
-            System.out.println("Loader не исчез");
+            System.out.println("Loader не исчез за отведённое время.");
             return false;
         }
     }
