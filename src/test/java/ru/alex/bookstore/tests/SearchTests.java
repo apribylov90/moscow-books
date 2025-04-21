@@ -13,9 +13,10 @@ import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 
-@Epic("Книжный магазин Moscow Books")
+@Epic("Каталог книг")
 @Feature("Действия пользователя в каталоге книг")
 @Story("Поиск, фильтрация и сортировка книг в каталоге")
+@DisplayName("Каталог книг")
 public class SearchTests extends BaseTest {
 
     @Story("Проверка функционала поиск")
@@ -28,9 +29,7 @@ public class SearchTests extends BaseTest {
             SearchResultsPage searchResultsPage = mainPage.searchFor(searchValue);
 
             step("Ожидание исчезновения loader", () -> {
-                assertThat(searchResultsPage.isLoaderDisappeared())
-                        .as("Loader должен исчезнуть")
-                        .isTrue();
+                assertThat(searchResultsPage.isLoaderDisappeared()).isTrue();
             });
 
             step("Проверка заголовка поиска", () -> {
