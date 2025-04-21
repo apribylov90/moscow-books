@@ -5,7 +5,8 @@ import org.openqa.selenium.WebDriver;
 import ru.alex.bookstore.pages.BasePage;
 
 public class MessagePopupElement extends BasePage {
-    private final By popup = By.xpath("//div[contains(@class, 'popup-cart-alert')]");
+    private final By popup = By.cssSelector(".popup-cart-alert");
+//    private final By popup = By.xpath("//div[contains(@class, 'popup-cart-alert')]");
 
 
     public MessagePopupElement(WebDriver driver) {
@@ -13,10 +14,11 @@ public class MessagePopupElement extends BasePage {
     }
 
     public boolean popupAppeared() {
-        return find(popup).isDisplayed();
+       return driver.findElement(popup).isDisplayed();
+
     }
 
     public String getPopupMessage() {
-        return find(popup).getText();
+        return driver.findElement(popup).getText();
     }
 }
