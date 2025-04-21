@@ -56,7 +56,7 @@ public class InitConfig {
 //            options.addArguments("--window-size=" + config.browserSize());
         options.addArguments("--disable-notifications", "--disable-popup-blocking");
         options.addArguments("--incognito");
-        options.setPageLoadStrategy(PageLoadStrategy.EAGER);
+        options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
 
         if (config.headless()) {
             options.addArguments("--headless=new");
@@ -78,7 +78,7 @@ public class InitConfig {
 //        options.addArguments("--height=" + config.browserSize().split("x")[1]);
         options.addPreference("dom.webdriver.enabled", false);
         options.addPreference("dom.webnotifications.enabled", false);
-        options.setPageLoadStrategy(PageLoadStrategy.EAGER);
+        options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
 
         if (config.headless()) {
             options.addArguments("--headless");
