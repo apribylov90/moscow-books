@@ -16,6 +16,12 @@ public class MainPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
+    @Step("Открыть главную страницу")
+    public MainPage openMainPage() {
+        open(generalConfig.baseUrl());
+        return this;
+    }
+
     @Step("Открыть модальное окно формы входа")
     public LoginModal openLoginModal() {
         open(generalConfig.baseUrl());
@@ -42,4 +48,9 @@ public class MainPage extends BasePage {
         return new SearchResultsPage(driver);
     }
 
+    @Step("Открыть страницу избранное")
+    public WishlistPage openWishPage() {
+        open(generalConfig.baseUrl() + "/profile/favourites/");
+        return new WishlistPage(driver);
+    }
 }
