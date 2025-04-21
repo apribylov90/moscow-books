@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 public class WishlistPage extends BasePage {
     private final By wishlistItems = By.cssSelector(".catalog__list .row");
     private final By wishlistTitle = By.className("page-header__title");
+    private final By wishButtonFirstItem = By.xpath("(//div[@title='Убрать из избранного'])[1]");
 
     public WishlistPage(WebDriver driver) {
         super(driver);
@@ -16,4 +17,9 @@ public class WishlistPage extends BasePage {
         WebElement booksRow = find(wishlistItems);
         return booksRow.findElements(By.cssSelector(".catalog__item")).size();
     }
+
+    public void removeBook() {
+        click(wishButtonFirstItem);
+    }
+
 }
