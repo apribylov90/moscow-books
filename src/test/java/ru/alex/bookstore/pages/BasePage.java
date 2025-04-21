@@ -28,7 +28,9 @@ public class BasePage {
     }
 
     protected WebElement waitForElement(By locator) {
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        return wait.until(ExpectedConditions.refreshed(
+                ExpectedConditions.visibilityOfElementLocated(locator)
+        ));
     }
 
     protected WebElement find(By locator) {
@@ -60,12 +62,12 @@ public class BasePage {
     }
 
     protected boolean isElementPresent(By locator) {
-//        return !driver.findElements(locator).isEmpty();
-        try {
-            wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-            return true;
-        } catch (TimeoutException e) {
-            return false;
-        }
+        return !driver.findElements(locator).isEmpty();
+//        try {
+//            wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+//            return true;
+//        } catch (TimeoutException e) {
+//            return false;
+//        }
     }
 }
