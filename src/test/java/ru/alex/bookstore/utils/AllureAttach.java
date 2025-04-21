@@ -64,7 +64,7 @@ public class AllureAttach {
     public static String getVideoUrl(WebDriver driver) {
         if (driver instanceof RemoteWebDriver) {
             String sessionId = ((RemoteWebDriver) driver).getSessionId().toString();
-            String videoUrl = config.selenoidHost() + sessionId + ".mp4";
+            String videoUrl = config.selenoidHost() +"video/"+ sessionId + ".mp4";
             try {
                 return new URL(videoUrl).toString();
             } catch (MalformedURLException e) {
