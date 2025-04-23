@@ -30,7 +30,6 @@ public class WishlistTests extends BaseTest {
     @DisplayName("Успешное добавление в избранное")
     @Test
     public void addToWishlistTest() {
-        String expectedMessage = "Товар помещен в избранное";
 
         SearchResultsPage searchResultsPage = mainPage.searchFor("Пушкин");
 
@@ -64,7 +63,6 @@ public class WishlistTests extends BaseTest {
     @DisplayName("Успешное удаление из избранного")
     @Test
     public void removeFromWishlistTest() {
-        String expectedMessage = "Товар удален из избранного";
         List<String> neededCookies = Arrays.asList(
                 "__RequestVerificationToken",
                 "basket_id",
