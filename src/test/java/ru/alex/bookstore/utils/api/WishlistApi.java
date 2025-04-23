@@ -1,14 +1,8 @@
 package ru.alex.bookstore.utils.api;
 
-import ru.alex.bookstore.api.models.wishlist.WishlistPushResponseModel;
-import ru.alex.bookstore.api.models.wishlist.WishlistResponseModel;
-
 import java.util.Map;
 
-import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-import static ru.alex.bookstore.api.filter.CustomAllureFilter.withCustomAllureFilter;
 
 public class WishlistApi {
 

@@ -3,7 +3,7 @@ package ru.alex.bookstore.api.tests;
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import ru.alex.bookstore.api.models.wishlist.WishlistPushResponseModel;
+import ru.alex.bookstore.api.models.wishlist.WishlistCartPushResponseModel;
 import ru.alex.bookstore.api.models.wishlist.WishlistResponseModel;
 
 import static io.qameta.allure.Allure.step;
@@ -36,12 +36,12 @@ public class WishlistTests extends BaseTest {
                 .statusCode(200)
                 .extract().as(WishlistResponseModel.class);
 
-        step("Проверка ответа", () -> {
+        step("Проверка ответа от первого запроса", () -> {
             assertThat(wishlistResponse.getCnt()).isEqualTo(1);
             assertThat(wishlistResponse.getIsSuccess()).isTrue();
         });
 
-        WishlistPushResponseModel wishlistPushResponse = given()
+        WishlistCartPushResponseModel wishlistPushResponse = given()
                 .filter(withCustomAllureFilter())
                 .contentType("application/json")
                 .body(body)
@@ -49,15 +49,13 @@ public class WishlistTests extends BaseTest {
                 .post("https://api.rees46.ru/push")
                 .then()
                 .statusCode(200)
-                .extract().as(WishlistPushResponseModel.class);
+                .extract().as(WishlistCartPushResponseModel.class);
 
-        step("Проверка ответа", () -> {
+        step("Проверка ответа от второго запроса", () -> {
             assertThat(wishlistPushResponse.getStatus()).isEqualTo("success");
             assertThat(wishlistPushResponse.getPayload().getEvent()).isEqualTo("wish");
             assertThat(wishlistPushResponse.getPayload().getItems().size()).isGreaterThan(0);
         });
-
-
 
     }
 }
