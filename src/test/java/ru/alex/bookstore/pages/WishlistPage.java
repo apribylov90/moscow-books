@@ -6,7 +6,6 @@ import org.openqa.selenium.WebElement;
 
 public class WishlistPage extends BasePage {
     private final By wishlistItems = By.cssSelector(".catalog__list .row");
-    private final By wishlistTitle = By.className("page-header__title");
     private final By wishButtonFirstItem = By.xpath("(//div[@title='Убрать из избранного'])[1]");
 
     public WishlistPage(WebDriver driver) {
