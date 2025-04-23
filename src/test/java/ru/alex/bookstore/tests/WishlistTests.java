@@ -20,8 +20,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static ru.alex.bookstore.utils.api.WishlistApi.addToWishList;
 
 @Epic("Книжный магазин Moscow Books")
-@Feature("Действия пользователя в каталоге книг")
-@Story("Добавление в избранное")
+@Feature("Действия пользователя с фунционолом избранного")
 @DisplayName("Тесты проверки избранного")
 public class WishlistTests extends BaseTest {
 
@@ -96,9 +95,6 @@ public class WishlistTests extends BaseTest {
         step("Проверка количества книг в избранном", () -> {
             assertThat(wishlistPage.booksCount()).isEqualTo(0);
         });
-
-
-
 
     }
 }
