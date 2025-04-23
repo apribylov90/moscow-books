@@ -2,6 +2,7 @@ package ru.alex.bookstore.pages.elements;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import ru.alex.bookstore.pages.BasePage;
 import ru.alex.bookstore.pages.WishlistPage;
 
@@ -18,6 +19,10 @@ public class HeaderElement extends BasePage {
 
     public String getWishlistCount() {
         return find(wishlistCount).getText();
+    }
+
+    public boolean wishCountIsZero() {
+        return wait.until(ExpectedConditions.invisibilityOfElementLocated(wishlistCount));
     }
 
     public WishlistPage clickWishlistButton() {
