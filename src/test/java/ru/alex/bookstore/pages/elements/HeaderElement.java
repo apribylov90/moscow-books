@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import ru.alex.bookstore.pages.BasePage;
+import ru.alex.bookstore.pages.CartPage;
 import ru.alex.bookstore.pages.WishlistPage;
 
 public class HeaderElement extends BasePage {
@@ -26,7 +27,20 @@ public class HeaderElement extends BasePage {
     }
 
     public WishlistPage clickWishlistButton() {
-        driver.findElement(wishlistButton).click();
+        click(wishlistButton);
         return new WishlistPage(driver);
+    }
+
+    public CartPage clickCartButton() {
+        click(basketButton);
+        return new CartPage(driver);
+    }
+
+    public String getBasketCount() {
+        return find(basketCount).getText();
+    }
+
+    public boolean basketCountIsZero() {
+        return wait.until(ExpectedConditions.invisibilityOfElementLocated(basketCount));
     }
 }
