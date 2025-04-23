@@ -18,13 +18,13 @@ ____
 * <a href="#video">Примеры видео выполнения тестов на Selenoid</a>
 ____
 <a id="tools"></a>
-## <a name="Технологии и инструменты">**Технологии и инструменты:**</a>
+## Технологии и инструменты:
 
 <p align="center">  
 <a href="https://www.java.com/"><img src="assets/logo/java.svg" width="50" height="50"  alt="Java"/></a>  
 <a href="https://junit.org/junit5/"><img src="assets/logo/junit5.svg" width="50" height="50"  alt="JUnit 5"/></a>  
 <a href="https://maven.apache.org/"><img src="assets/logo/maven.svg" width="100" height="50"  alt="Maven"/></a>  
-<a href="https://www.selenium.dev/"><img src="assets/logo/selenium.svg" width="50" height="50"  alt="Selenide"/></a>  
+<a href="https://www.selenium.dev/"><img src="assets/logo/selenium.svg" width="50" height="50"  alt="Selenium"/></a>  
 <a href="https://aerokube.com/selenoid/"><img src="assets/logo/selenoid.svg" width="50" height="50"  alt="Selenoid"/></a>  
 <a href="https://github.com/allure-framework/allure2"><img src="assets/logo/allure.svg" width="50" height="50"  alt="Allure"/></a>    
 <a href="https://www.jenkins.io/"><img src="assets/logo/jenkins.svg" width="50" height="50"  alt="Jenkins"/></a>  
@@ -39,11 +39,13 @@ ____
 <a id="cases"></a>
 **Примеры тест-кейсов:**</a>
 ____
-- Тест кейсы
+- Вход пользователя
+- Поиск по автору
+- Проверка функционала избранного
 
 ____
 <a id="jenkins"></a>
-## <img alt="Jenkins" height="25" src="assets/logo/Jenkins.svg" width="25"/></a><a name="Сборка"></a>Сборка в [Jenkins](https://jenkins.autotests.cloud/job/029-anastasia-yildirim-qa_guru_java-bookstore-ui-tests/)</a>
+## Сборка в Jenkins
 ____
 <p align="center">  
 <a><img src="assets/screen/" alt="Jenkins" width="950"/></a>  
@@ -60,41 +62,37 @@ ___
 ***Локальный запуск:***
 
 ```bash  
-mvn clean test -Dlogin=ЛОГИН -Dpassword=ПАРОЛЬ
-```
-
-***Удалённый запуск через Jenkins:***
-```bash  
 mvn clean test
 "-Dbrowser=${browser}"
 ```
 ___
 <a id="allure"></a>
-## <img alt="Allure" height="25" src="assets/logo/Allure.svg" width="25"/></a> <a name="Allure"></a>Allure [отчет](https://jenkins.autotests.cloud/job/029-anastasia-yildirim-qa_guru_java-bookstore-ui-tests/allure/)</a>
+## Allure отчет
 ___
 
-### *Основная страница отчёта*
+### Основная страница отчёта
 
 <p align="center">  
 <img title="Allure Overview Dashboard" src="assets/screen/" width="850">  
 </p>  
 
-### *Тест-кейсы*
+### Тест-кейсы
 
 <p align="center">  
 <img title="Allure Tests" src="assets/screen/" width="850">  
 </p>
 
-### *Графики*
+### Графики
 
-  <p align="center">  
+<p align="center">  
 <img title="Allure Graphics" src="assets/screen/" width="850">
 
 <img title="Allure Graphics" src="assets/screen/" width="850">  
 </p>
+
 ____
 <a id="video"></a>
-## <img alt="Selenoid" height="25" src="assets/logo/Selenoid.svg" width="25"/> Примеры видео выполнения тестов на Selenoid
+## Примеры видео выполнения тестов на Selenoid
 ____
 <p align="center">
 <img title="Selenoid Video" src="assets/video/" width="550" height="350"  alt="video">   
