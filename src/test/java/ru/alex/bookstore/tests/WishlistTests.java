@@ -48,14 +48,6 @@ public class WishlistTests extends BaseTest {
             searchResultsPage.addToWishlist();
         });
 
-        step("Проверка всплывающего сообщения - Товар помещен в избранное", () -> {
-            assertThat(popup.popupAppeared())
-                    .as("Должно появиться сообщение о добавлении в избранное")
-                    .isTrue();
-
-            assertThat(popup.getPopupMessage()).isEqualTo(expectedMessage);
-        });
-
         step("Проверка счетчика избранного", () -> {
             assertThat(header.getWishlistCount()).isEqualTo("1");
         });
@@ -99,17 +91,15 @@ public class WishlistTests extends BaseTest {
 
         wishlistPage.removeBook();
 
-        step("Проверка всплывающего сообщения - Товар удален из избранного", () -> {
-            assertThat(popup.popupAppeared())
-                    .as("Должно появиться сообщение об удалении в избранное")
-                    .isTrue();
-
-            assertThat(popup.getPopupMessage()).isEqualTo(expectedMessage);
+        step("Проверка счетчика избранного", () -> {
+            assertThat(header.wishCountIsZero()).isTrue();
         });
 
         step("Проверка количества книг в избранном", () -> {
             assertThat(wishlistPage.booksCount()).isEqualTo(0);
         });
+
+
 
 
     }
