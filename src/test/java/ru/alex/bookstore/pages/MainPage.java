@@ -17,9 +17,8 @@ public class MainPage extends BasePage {
     }
 
     @Step("Открыть главную страницу")
-    public MainPage openMainPage() {
+    public void openMainPage() {
         open(generalConfig.baseUrl());
-        return this;
     }
 
     @Step("Открыть модальное окно формы входа")
@@ -52,5 +51,11 @@ public class MainPage extends BasePage {
     public WishlistPage openWishPage() {
         open(generalConfig.baseUrl() + "/profile/favourites/");
         return new WishlistPage(driver);
+    }
+
+    @Step("Открыть страницу корзина")
+    public CartPage openCartPage() {
+        open(generalConfig.baseUrl() + "/profile/basket/");
+        return new CartPage(driver);
     }
 }
