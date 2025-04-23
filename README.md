@@ -1,6 +1,6 @@
 # Проект по автоматизации тестирования для книжного магазина [Moscow Books](https://www.moscowbooks.ru/)
 
-> Moscow Books — один из ведущих магазинов, специализирующаяся на продаже книг.
+> Moscow Books — один из ведущих магазинов по продаже книг.
 
 ## **Содержание:**
 ____
@@ -92,8 +92,8 @@ ___
 
 ____
 <a id="video"></a>
-## Примеры видео выполнения тестов на Selenoid
+## Пример видео выполнения тестов на Selenoid
 ____
 <p align="center">
-<img title="Selenoid Video" src="assets/video/" width="550" height="350"  alt="video">   
+<img title="Selenoid Video" src="assets/video/moscowbook-test-0.gif" width="550" height="350"  alt="video">   
 </p>
