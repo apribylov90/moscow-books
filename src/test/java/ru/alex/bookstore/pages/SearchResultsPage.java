@@ -10,6 +10,7 @@ public class SearchResultsPage extends BasePage {
     private final By searchTitle = By.className("page-header__title");
     private final By loader = By.id("pLoader");
     private final By wishlistButton = By.xpath("(//div[@title='В избранное'])[1]");
+    private final By addToCartButton = By.cssSelector(".tocart_btn");
 
 
     public SearchResultsPage(WebDriver driver) {
@@ -42,6 +43,10 @@ public class SearchResultsPage extends BasePage {
 
     public void addToWishlist() {
         click(wishlistButton);
+    }
+
+    public void addToBasket() {
+        click(addToCartButton);
     }
 
 
