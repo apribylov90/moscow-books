@@ -15,7 +15,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 @Epic("Каталог книг")
 @Feature("Действия пользователя в каталоге книг")
-@Story("Поиск, фильтрация и сортировка книг в каталоге")
+@Story("Поиск книг в каталоге")
 @DisplayName("Каталог книг")
 public class SearchTests extends BaseTest {
 
@@ -74,4 +74,35 @@ public class SearchTests extends BaseTest {
         });
 
     }
+
+    @Story("Проверка функционала поиск")
+    @Description("Проверяем, что пользователь может успешно найти товар с заданными параметрами")
+    @DisplayName("Успешный поиск книг по названию")
+    @ParameterizedTest
+    @ValueSource(strings = {"Доктор Живаго", "Гарри Поттер"})
+    public void successfulSearchByBookNameTest(String searchValue) {
+        step("Поиск по значению: " + searchValue, () -> {
+            SearchResultsPage searchResultsPage = mainPage.searchFor(searchValue);
+
+            step("Ожидание исчезновения loader", () -> {
+                assertThat(searchResultsPage.isLoaderDisappeared()).isTrue();
+            });
+
+            step("Проверка заголовка поиска", () -> {
+                assertThat(searchResultsPage.searchTitleIsPresent())
+                        .as("Заголовок должен содержать значение поиска")
+                        .contains(searchValue);
+            });
+
+            step("Проверка наличия результатов поиска", () -> {
+                assertThat(searchResultsPage.searchResultsArePresent())
+                        .as("Должны появиться результаты поиска")
+                        .isTrue();
+            });
+
+        });
+
+    }
+
+
 }
