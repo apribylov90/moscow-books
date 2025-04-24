@@ -89,5 +89,5 @@ ____
 ## Пример видео выполнения тестов на Selenoid
 ____
 <p align="center">
-<img title="Selenoid Video" src="assets/video/moscowbook-test-0.gif" width="550" height="350"  alt="video">   
+<img title="Selenoid Video" src="assets/video/moscowbook-test-1.gif" width="550" height="350"  alt="video">   
 </p>
