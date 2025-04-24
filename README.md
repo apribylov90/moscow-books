@@ -43,20 +43,14 @@ ____
 - Поиск по автору
 - Проверка функционала избранного
 - Проверка функционала корзины
-- Проверка API
-
+- Проверка Wishlist, Basket API
 ____
 <a id="jenkins"></a>
 ## Сборка в Jenkins
 ____
 <p align="center">  
-<a><img src="assets/screen/" alt="Jenkins" width="950"/></a>  
+<a><img src="assets/screen/jenkins_main.png" alt="Jenkins" width="950"/></a>  
 </p>
-
-
-### **Параметры сборки в Jenkins:**
-- *browser (браузер, по умолчанию chrome)*
-
 
 <a id="console"></a>
 ## Команды для запуска из терминала
@@ -65,7 +59,6 @@ ___
 
 ```bash  
 mvn clean test
-"-Dbrowser=${browser}"
 ```
 ___
 <a id="allure"></a>
@@ -75,21 +68,20 @@ ___
 ### Основная страница отчёта
 
 <p align="center">  
-<img title="Allure Overview Dashboard" src="assets/screen/" width="850">  
+<img title="Allure Overview Dashboard" src="assets/screen/allure_main.png" width="850">  
 </p>  
 
 ### Тест-кейсы
 
 <p align="center">  
-<img title="Allure Tests" src="assets/screen/" width="850">  
+<img title="Allure Tests" src="assets/screen/allure_test.png" width="850">  
 </p>
 
 ### Графики
 
 <p align="center">  
-<img title="Allure Graphics" src="assets/screen/" width="850">
+<img title="Allure Graphics" src="assets/screen/allure_graphs.png" width="850">
 
-<img title="Allure Graphics" src="assets/screen/" width="850">  
 </p>
 
 ____
