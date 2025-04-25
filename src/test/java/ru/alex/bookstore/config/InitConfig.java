@@ -72,7 +72,7 @@ public class InitConfig {
 
     private WebDriver createFirefoxDriver() {
         FirefoxOptions options = new FirefoxOptions();
-        options.setCapability("browserVersion", config.browserVersion());
+        options.setCapability("browserVersion", "125.0");
         options.addArguments("--start-maximized");
 //        options.addArguments("--width=" + config.browserSize().split("x")[0]);
 //        options.addArguments("--height=" + config.browserSize().split("x")[1]);
