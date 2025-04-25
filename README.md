@@ -57,8 +57,15 @@ ____
 ___
 ***Локальный запуск:***
 
-```bash  
+```
 mvn clean test
+```
+
+***Параметры:***
+
+```
+-DisRemote=true - запуск в Selenoid
+-DbrowserName=firefox - Firefox браузер
 ```
 ___
 <a id="allure"></a>
