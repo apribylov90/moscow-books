@@ -18,7 +18,7 @@ pipeline {
 
         stage('run-test') {
             steps {
-                sh 'mvn clean test'
+                sh 'mvn clean test -DisRemote=true'
             }
         }
 
